@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: ddd-order-demo
+  cloud:
+    consul:
+      enabled: false
+  elasticsearch:
+    uris: 127.0.0.1
+
+  kafka:
+    producer:
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      value-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
+
+  redis:
+    host: localhost
+    port: 6379
+    password: 123456
+    database: 0
+    #cluster:
+      #nodes:
+
+
+server:
+  port: 8080
