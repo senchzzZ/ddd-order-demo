@@ -139,19 +139,16 @@ ddd-demo/
 │   │   │   │                   │   │   └── OrderMessageProducer.java
 │   │   │   │                   │   ├── remote ------ 基础设施-远程调用
 │   │   │   │                   │   │   ├── IProductRemoteService.java
-│   │   │   │                   │   │   ├── IScheduleRemoteService.java
-│   │   │   │                   │   │   └── IUserRemoteService.java
+│   │   │   │                   │   │   └── IScheduleRemoteService.java
 │   │   │   │                   │   └── repository ------ 基础设施-资源库
 │   │   │   │                   │       ├── IDeliveryAddressRepository.java
 │   │   │   │                   │       ├── IOrderRepository.java
-│   │   │   │                   │       └── IUserInfoRepository.java
+│   │   │   │                   │       └── IUserRepository.java
 │   │   │   │                   ├── model ------ 领域模型
-│   │   │   │                   │   ├── depot ------ 子域
-│   │   │   │                   │   │   └── Depot.java ------ 实体
 │   │   │   │                   │   ├── order ------ 子域-核心域
 │   │   │   │                   │   │   ├── DeliveryInfo.java
 │   │   │   │                   │   │   ├── LockInventoryResponse.java
-│   │   │   │                   │   │   ├── Order.java
+│   │   │   │                   │   │   ├── Order.java  ------ 实体
 │   │   │   │                   │   │   ├── OrderDomainEvent.java
 │   │   │   │                   │   │   ├── OrderEvent.java
 │   │   │   │                   │   │   ├── OrderEventTypeEnum.java
