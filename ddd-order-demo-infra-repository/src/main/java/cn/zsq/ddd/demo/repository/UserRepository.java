@@ -4,7 +4,7 @@ import cn.zsq.ddd.demo.convertor.UserConvertor;
 import cn.zsq.ddd.demo.domain.model.user.User;
 import cn.zsq.ddd.demo.domain.infra.repository.IUserRepository;
 import cn.zsq.ddd.demo.entity.UserEntity;
-import cn.zsq.ddd.demo.repository.mapper.UserInfoMapper;
+import cn.zsq.ddd.demo.repository.mapper.UserMapper;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
@@ -14,7 +14,7 @@ import java.util.Optional;
 public class UserRepository implements IUserRepository {
 
 	@Resource
-	private UserInfoMapper userInfoMapper;
+	private UserMapper userMapper;
 
 
 	/**
@@ -25,7 +25,7 @@ public class UserRepository implements IUserRepository {
 	@Override
 	public int addUser(User user) {
 		UserEntity entity = UserConvertor.INSTANCT.convertToEntity(user);
-		return userInfoMapper.insert(entity);
+		return userMapper.insert(entity);
 	}
 
 	/**
@@ -36,7 +36,7 @@ public class UserRepository implements IUserRepository {
 	@Override
 	public int updateUser(User user) {
 		UserEntity entity = UserConvertor.INSTANCT.convertToEntity(user);
-		return userInfoMapper.update(entity);
+		return userMapper.update(entity);
 	}
 
 	/**
@@ -46,7 +46,7 @@ public class UserRepository implements IUserRepository {
 	 */
 	@Override
 	public Optional<User> findById(Long id) {
-		return Optional.ofNullable(UserConvertor.INSTANCT.convertToDO(userInfoMapper.findById(id)));
+		return Optional.ofNullable(UserConvertor.INSTANCT.convertToDO(userMapper.findById(id)));
 	}
 
 }

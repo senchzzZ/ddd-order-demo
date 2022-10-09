@@ -1,9 +1,9 @@
 package cn.zsq.ddd.demo.api.controller;
 
-import cn.zsq.ddd.demo.api.controller.convertor.UserConvertor;
+import cn.zsq.ddd.demo.application.convertor.UserConvertor;
 import cn.zsq.ddd.demo.application.pojo.cmd.UserCreateCmd;
 import cn.zsq.ddd.demo.application.pojo.query.UserQuery;
-import cn.zsq.ddd.demo.api.controller.response.UserResponse;
+import cn.zsq.ddd.demo.application.pojo.response.UserResponse;
 import cn.zsq.ddd.demo.application.service.UserInfoService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

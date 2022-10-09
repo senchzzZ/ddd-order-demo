@@ -1,4 +1,4 @@
-package cn.zsq.ddd.demo.api.controller.response;
+package cn.zsq.ddd.demo.application.pojo.response;
 
 import lombok.Data;
 

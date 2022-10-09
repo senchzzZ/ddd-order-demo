@@ -1,6 +1,6 @@
-package cn.zsq.ddd.demo.api.controller.convertor;
+package cn.zsq.ddd.demo.application.convertor;
 
-import cn.zsq.ddd.demo.api.controller.response.OrderResponse;
+import cn.zsq.ddd.demo.application.pojo.response.OrderResponse;
 import cn.zsq.ddd.demo.domain.model.order.Order;
 import org.springframework.beans.BeanUtils;
 

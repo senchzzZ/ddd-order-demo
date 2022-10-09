@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Param;
 
 
 @Mapper
-public interface UserInfoMapper {
+public interface UserMapper {
 
 	/**
 	 * 插入用户
