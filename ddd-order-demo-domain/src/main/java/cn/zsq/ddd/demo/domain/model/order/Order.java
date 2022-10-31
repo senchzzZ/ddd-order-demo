@@ -74,18 +74,23 @@ public class Order {
     }
 
     /**
-     * 订单初始化,委派给setter方法,实现自封装性
+     * todo 最好的方式是使用工厂来创建领域实体
+     * 订单创建,委派给setter方法,实现自封装性
+     * 创建订单
      * @param orderNo
      * @param deliveryAddress
      * @param orderItemList
      * @param userId
+     * @return
      */
-    public Order(String orderNo, DeliveryAddress deliveryAddress, List<OrderItem> orderItemList, Long userId) {
-        this.setOrderNo(orderNo);
-        this.setDeliveryAddress(deliveryAddress);
-        this.setOrderItemList(orderItemList);
-        this.setUserId(userId);
-        initialize();
+    public static Order create(String orderNo, DeliveryAddress deliveryAddress, List<OrderItem> orderItemList, Long userId) {
+        Order order = new Order();
+        order.setOrderNo(orderNo);
+        order.setDeliveryAddress(deliveryAddress);
+        order.setOrderItemList(orderItemList);
+        order.setUserId(userId);
+        order.initialize();
+        return order;
     }
 
     public void changeItemCount(long itemId, int count) {

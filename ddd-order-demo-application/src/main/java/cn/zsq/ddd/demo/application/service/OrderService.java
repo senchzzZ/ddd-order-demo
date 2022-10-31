@@ -102,8 +102,8 @@ public class OrderService {
         Optional<DeliveryAddress> deliveryInfoOptional = deliveryAddressRepository.findById(cmd.getDeliveryAddressId());
         DeliveryAddress deliveryAddress = deliveryInfoOptional.orElseThrow(() -> new DemoBusinessException("配送信息不存在"));
 
-        //创建订单
-        Order order = new Order(orderNo, deliveryAddress, orderItemList, user.getUserId());
+        //创建订单,最好的方式是使用工厂,这里的做法是让聚合根承担了工厂的职责
+        Order order = Order.create(orderNo, deliveryAddress, orderItemList, user.getUserId());
         //调度域-锁定库存,用到了远程服务,所以放到了领域服务
         orderDomainService.lockInventory(order);
         //创建订单

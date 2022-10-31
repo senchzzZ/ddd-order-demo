@@ -18,10 +18,10 @@ import java.util.Optional;
  *
  */
 @Service
-public class UserInfoService {
+public class UserService {
 
     @Resource
-    private IUserRepository userInfoRepository;
+    private IUserRepository userRepository;
 
     @Resource
     private TransactionTemplate transactionTemplate;
@@ -34,8 +34,8 @@ public class UserInfoService {
         transactionTemplate.execute(new TransactionCallbackWithoutResult() {
             @Override
             protected void doInTransactionWithoutResult(TransactionStatus transactionStatus) {
-                userInfoRepository.addUser(user);
-                userInfoRepository.updateUser(user);
+                userRepository.addUser(user);
+                userRepository.updateUser(user);
             }
         });
 
@@ -47,7 +47,7 @@ public class UserInfoService {
     }
 
     public User findById(Long id) {
-        Optional<User> userOptional = userInfoRepository.findById(id);
+        Optional<User> userOptional = userRepository.findById(id);
         return userOptional.orElseThrow(() -> new DemoBusinessException("user not exist"));
     }
 
