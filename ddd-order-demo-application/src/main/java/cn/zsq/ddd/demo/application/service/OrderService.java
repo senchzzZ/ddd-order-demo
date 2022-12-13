@@ -93,7 +93,6 @@ public class OrderService {
 
         //像这种把参数模型转为领域模型的情况,并不适合放到领域模型中,因为领域模型只关心自己本身的行为和状态,
         // 如果要放到领域模型中,其他模型就会侵入到当前领域模型中,也可以在当前层级定义convertor来进行转换
-        //把参数模型转换为领域模型,可以定义convertor来进行转换
         List<OrderItem> orderItemList = makeOrderItems(cmd.getProductItems(), orderNo);
         //校验库存并组装订单项,因为product和OrderItem属于两个域,且使用了外部product服务,所以使用了领域服务
         orderDomainService.checkInventoryAndAssembleOrderItems(orderItemList);

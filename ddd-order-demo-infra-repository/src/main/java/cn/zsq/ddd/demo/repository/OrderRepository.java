@@ -10,6 +10,7 @@ import cn.zsq.ddd.demo.entity.OrderItemEntity;
 import cn.zsq.ddd.demo.repository.condition.UserItemCondition;
 import cn.zsq.ddd.demo.repository.mapper.OrderItemMapper;
 import cn.zsq.ddd.demo.repository.mapper.OrderMapper;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.CollectionUtils;
 
@@ -32,8 +33,8 @@ public class OrderRepository implements IOrderRepository {
     /*@Resource(name = "redisBucketCacheManager")
 	private CacheManager cacheManager;*/
 
-	/*@Resource
-	private RedisTemplate<String, Object> redisTemplate;*/
+	@Resource
+	private RedisTemplate<String, Object> redisTemplate;
 
 
     public void save(Order order) {
