@@ -26,6 +26,12 @@
             <version>${project.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>cn.zsq.ddd</groupId>
+            <artifactId>ddd-order-demo-infra-remote</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
